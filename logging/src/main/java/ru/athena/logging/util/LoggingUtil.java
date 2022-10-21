@@ -20,8 +20,8 @@ public final class LoggingUtil {
     /**
      * Initial spring application start log.
      *
-     * @param env spring environment
-     * @param log logger
+     * @param env spring environment.
+     * @param log logger.
      */
     public static void logApplicationStartup(Environment env, Logger log) {
         String applicationName = env.getProperty("spring.application.name");
