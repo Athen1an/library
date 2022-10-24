@@ -11,6 +11,7 @@
 
     <modules>
         <module>logging</module>
+        <module>utility</module>
     </modules>
 
     <properties>
