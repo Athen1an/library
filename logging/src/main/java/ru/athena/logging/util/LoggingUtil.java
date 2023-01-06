@@ -38,11 +38,14 @@ public final class LoggingUtil {
             log.warn("The host name could not be determined, using `localhost` as fallback");
         }
 
-        log.info("\n----------------------------------------------------------\n\t" +
-                        "Application '{}' is running! Access URLs:\n\t" +
-                        "Local: \t\t{}://localhost:{}{}\n\t" +
-                        "External: \t{}://{}:{}{}\n\t" +
-                        "Profile(s): \t{}\n----------------------------------------------------------",
+        log.info("""
+                 ----------------------------------------------------------
+                 Application '{}' is running! Access URLs:
+                 Local: {}://localhost:{}{}
+                 External: {}://{}:{}{}
+                 Profile(s): {}
+                 ----------------------------------------------------------
+                 """,
                 applicationName,
                 protocol,
                 serverPort,
@@ -54,7 +57,11 @@ public final class LoggingUtil {
                 env.getActiveProfiles());
 
         String configServerStatus = env.getProperty("configserver.status", "Not found or not setup for this application");
-        log.info("\n----------------------------------------------------------\n\t" +
-                "Config Server: \t{}\n----------------------------------------------------------", configServerStatus);
+        log.info("""
+                ----------------------------------------------------------
+                "Config Server: {}
+                ----------------------------------------------------------
+                """,
+                configServerStatus);
     }
 }
