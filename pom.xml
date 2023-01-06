@@ -73,7 +73,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot-dependencies.verion}</version>
-                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
