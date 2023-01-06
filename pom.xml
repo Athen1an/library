@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.athena</groupId>
-    <artifactId>features</artifactId>
+    <artifactId>library</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
 
@@ -21,7 +21,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <!-- Spring -->
-        <spring-boot-dependencies.verion>2.7.5</spring-boot-dependencies.verion>
+        <spring-boot-dependencies.verion>3.0.1</spring-boot-dependencies.verion>
 
         <!-- Util -->
         <lombok.version>1.18.24</lombok.version>
