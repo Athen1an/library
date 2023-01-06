@@ -39,6 +39,7 @@ public final class LoggingUtil {
         }
 
         log.info("""
+                 
                  ----------------------------------------------------------
                  Application '{}' is running! Access URLs:
                  Local: {}://localhost:{}{}
@@ -58,6 +59,7 @@ public final class LoggingUtil {
 
         String configServerStatus = env.getProperty("configserver.status", "Not found or not setup for this application");
         log.info("""
+                
                 ----------------------------------------------------------
                 "Config Server: {}
                 ----------------------------------------------------------
