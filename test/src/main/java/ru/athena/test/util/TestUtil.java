@@ -1,10 +1,13 @@
 package ru.athena.test.util;
 
+import org.apache.commons.io.IOUtils;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.http.MediaType;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -36,5 +39,21 @@ public final class TestUtil {
         registrar.setUseIsoFormat(true);
         registrar.registerFormatters(defaultFormattingConversionService);
         return defaultFormattingConversionService;
+    }
+
+    /**
+     * Read resource file from path
+     *
+     * @param resourcePath - resource path
+     * @return string representation
+     */
+    public static String readResource(String resourcePath) {
+        var classPathResource = new ClassPathResource(resourcePath);
+
+        try {
+            return IOUtils.toString(classPathResource.getInputStream(), StandardCharsets.UTF_8.name());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
