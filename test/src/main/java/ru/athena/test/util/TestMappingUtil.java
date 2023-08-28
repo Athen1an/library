@@ -29,6 +29,21 @@ public final class TestMappingUtil {
     }
 
     /**
+     * Deserialize byte array to the specified class
+     *
+     * @param content  - content to deserialize
+     * @param dtoClass - class to which you want to convert
+     * @return object of specified class
+     */
+    public static <T> T convertToObject(byte[] content, Class<T> dtoClass) {
+        try {
+            return OBJECT_MAPPER.readValue(content, dtoClass);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
      * Convert any object in byte array using {@link ObjectMapper}
      *
      * @param object - object to converting
